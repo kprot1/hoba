@@ -2,54 +2,19 @@
 
 namespace App\Http\Controllers;
 
-
 use App\Model\Ad\AdNode;
 use App\Model\Vast\VastNode;
-use bupy7\xml\constructor\XmlConstructor;
+use App\Vast\src\Constructor\XmlConstructor;
+use Zend\Diactoros\Response\XmlResponse;
 
 class TestController extends Controller
 {
     public function test()
     {
         $xmlConstructor = new XmlConstructor();
-
         $hob = $this->createNode();
 
-        $in = [
-            [
-                'tag' => 'Vast',
-                'attributes' => [
-                    'version' => '2.0'
-                ],
-                'elements' => [
-                    [
-                        'tag' => 'tag1',
-                        'attributes' => [
-                            'attr1' => 'val1',
-                            'attr2' => 'val2',
-                        ],
-                    ],
-                    [
-                        'tag' => 'tag2',
-                        'content' => 'content2',
-                    ],
-                    [
-                        'tag' => 'tag3',
-                        'elements' => [
-                            [
-                                'tag' => 'tag4',
-                                'content' => 'content4',
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ];
-
-
-        echo $xmlConstructor->fromArray([$hob])->toOutput();
-
-        return '';
+        return $xmlConstructor->fromArray([$hob])->toOutput();
     }
 
     public function createNode(): array
