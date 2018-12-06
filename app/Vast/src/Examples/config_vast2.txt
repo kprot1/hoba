@@ -1,0 +1,105 @@
+Vast (version) {
+    Ad (id) {
+        Inline () {
+            AdSystem (version) {},
+            AdTitle () {},
+            Description () {},
+            Survey () {},
+            Error () {},
+            Impression (id) {},
+            Creatives () {
+                Creative (id, sequence, AdID) {
+                    Linear() {
+                        Duration () {},
+                        TrackingEvents() {
+                            Tracking (event) {}
+                        },
+                        AdParameters () {},
+                        VideoClicks () {
+                            ClickThrough (id) {},
+                            ClickTracking (id) {},
+                            CustomClick (id) {}
+                        },
+                        MediaFiles () {
+                            MediaFile (id, height, width, bitrate, type, delivery, scalable, maintainAspectRatio, apiFramework) {}
+                        }
+                    },
+                    CompanionAds () {
+                        Companion (height, width, id, expandedWidth, expandedHeight, apiFramework) {
+                            StaticResource (creativeType) {},
+                            IFrameResource () {},
+                            HTMLResource() {},
+                            TrackingEvents () {
+                                Tracking (event) {}
+                            },
+                            CompanionClickThrough () {},
+                            AltText () {},
+                            AdParameters () {}
+                        }
+                    },
+                    NonLinearAds () {
+                        TrackingEvents () {
+                            Tracking (event) {}
+                        },
+                        NonLinear (id, width, height, expandedWidth, expandedHeight, scalable, maintainAspectRatio, minSuggestedDuration, apiFramework) {
+                            StaticResource (creativeType) {},
+                            IFrameResource () {},
+                            HTMLResource () {},
+                            NonLinearClickThrough () {},
+                            AdParameters() {}
+                        }
+                    }
+                }
+            },
+            Extensions () {
+                Extension () {}
+            }
+        },
+        Wrapper () {
+            AdSystem (version) {},
+            VASTAdTagURI () {},
+            Error () {},
+            Impression () {},
+            Creatives () {
+                Creative (AdID, id, sequence) {
+                    Lenear () {
+                        TrackingEvents () {
+                            Tracking (event) {}
+                        },
+                        VideoClicks () {
+                            ClickTracking (id) {}
+                        }
+                    },
+                    CompanionAds () {
+                        Companion (id, height, width, expandedHeight, expandedWidth, apiFramework) {
+                            StaticResource (creativeType) {},
+                            IFrameResource () {},
+                            HTMLResource() {},
+                            TrackingEvents () {
+                                Tracking (event) {}
+                            },
+                            CompanionClickThrough () {},
+                            AltText () {},
+                            AdParameters () {}
+                        }
+                    },
+                    NonLinearAds () {
+                        TrackingEvents () {
+                            Tracking (event) {}
+                        },
+                        NonLinear (id, width, height, expandedWidth, expandedHeight, scalable, maintainAspectRatio, minSuggestedDuration, apiFramework) {
+                            StaticResource (creativeType) {},
+                            IFrameResource () {},
+                            HTMLResource () {},
+                            NonLinearClickThrough () {},
+                            AdParameters() {}
+                        }
+                    }
+                }
+            },
+            Extensions () {
+                Extension() {}
+            }
+        }
+    }
+}
