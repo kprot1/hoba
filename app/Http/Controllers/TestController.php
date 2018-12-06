@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 
+use App\Model\Ad\AdNode;
+use App\Model\Vast\VastNode;
 use bupy7\xml\constructor\XmlConstructor;
 
 class TestController extends Controller
@@ -11,7 +13,7 @@ class TestController extends Controller
     {
         $xmlConstructor = new XmlConstructor();
 
-        $hob = $this->createHoba();
+        $hob = $this->createNode();
 
         $in = [
             [
@@ -50,10 +52,11 @@ class TestController extends Controller
         return '';
     }
 
-    public function createHoba(): array
+    public function createNode(): array
     {
-        $hob = new Hob();
+        $vastNode = new VastNode();
+        $vastNode->setAdNode(new AdNode());
 
-        return get_object_vars($hob);
+        return json_decode(json_encode($vastNode), true);
     }
 }
