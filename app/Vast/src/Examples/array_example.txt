@@ -1,0 +1,30 @@
+$in = [
+            [
+                'tag' => 'Vast',
+                'attributes' => [
+                    'version' => '2.0'
+                ],
+                'elements' => [
+                    [
+                        'tag' => 'tag1',
+                        'attributes' => [
+                            'attr1' => 'val1',
+                            'attr2' => 'val2',
+                        ],
+                    ],
+                    [
+                        'tag' => 'tag2',
+                        'content' => 'content2',
+                    ],
+                    [
+                        'tag' => 'tag3',
+                        'elements' => [
+                            [
+                                'tag' => 'tag4',
+                                'content' => 'content4',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ];
