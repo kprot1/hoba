@@ -1,0 +1,44 @@
+VideoAdServingTemplate () {
+    Ad (id) {
+        InLine () {
+            AdSystem () {},
+            AdTitle () {},
+            Impression () {
+                URL (тут нет айдишника) {}
+                URL (id) {}
+                URL (id) {}
+            },
+            TrackingEvents () {
+                Tracking (event) {
+                    URL (id) {},
+                    URL (id) {},
+                }
+            },
+            Video () {
+                Duration() {},
+                AdID () {},
+                AdParameters (apiFramework) {},
+                VideoClicks () {
+                    ClickThrough () {
+                        URL (id) {}
+                    }
+                },
+                MediaFiles () {
+                    MediaFile(width, type, height, delivery, bitrate) {
+                        URL () {}
+                    }
+                }
+            },
+            CompanionAds () {
+                Companion (width, resourceType, id, height) {
+                    Code () {}
+                }
+            },
+            NonLinearAds () {
+                NonLinear(width, resourceType, id, height, creativeType, apiFramework) {
+                    URL () {}
+                }
+            }
+        }
+    }
+}
