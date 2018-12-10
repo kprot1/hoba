@@ -4,8 +4,7 @@ VideoAdServingTemplate () {
             AdSystem () {},
             AdTitle () {},
             Impression () {
-                URL (тут нет айдишника) {}
-                URL (id) {}
+                URL () {}
                 URL (id) {}
             },
             TrackingEvents () {

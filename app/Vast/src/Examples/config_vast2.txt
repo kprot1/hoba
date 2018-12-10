@@ -1,47 +1,49 @@
-Vast (version) {
-    Ad (id) {
-        Inline () {
-            AdSystem (version) {},
-            AdTitle () {},
-            Description () {},
-            Survey () {},
-            Error () {},
-            Impression (id) {},
-            Creatives () {
-                Creative (id, sequence, AdID) {
-                    Linear() {
-                        Duration () {},
-                        TrackingEvents() {
-                            Tracking (event) {}
+Vast+ (version) {
+    Ad+ (id) {
+        Inline+ () {
+            AdSystem+ (version) {},
+            AdTitle+ () {},
+            Description+ () {},
+            Survey- () {},
+            Error+ () {}, // может быть несколько
+            Error+ () {},
+            Impression+ (id) {}, // может быть несколько
+            Impression+ (id) {}, // может быть несколько
+            Creatives+ () {
+                Creative+ (id,sequ???ence,AdID) { // id и AdId заполняем всегда
+                    Linear+ () {
+                        Duration+ () {},
+                        TrackingEvents+ () {
+                            Tracking+ (event) {}
                         },
-                        AdParameters () {},
+                        AdParameters+ () {}, // нет необходимости в этом но добавить
                         VideoClicks () {
-                            ClickThrough (id) {},
-                            ClickTracking (id) {},
-                            CustomClick (id) {}
+                            ClickThrough+(id) {},
+                            ClickTracking+ (id) {},
+                            CustomClick- (id) {} // точно нет
                         },
-                        MediaFiles () {
-                            MediaFile (id, height, width, bitrate, type, delivery, scalable, maintainAspectRatio, apiFramework) {}
+                        MediaFiles+ () {
+                            MediaFile+ (id, height, width, bitrate, type, delivery, scalable, maintainAspectRatio, apiFramework) {}
                         }
                     },
-                    CompanionAds () {
-                        Companion (height, width, id, expandedWidth, expandedHeight, apiFramework) {
-                            StaticResource (creativeType) {},
-                            IFrameResource () {},
-                            HTMLResource() {},
-                            TrackingEvents () {
+                    CompanionAds+ () {
+                        Companion+ (id,width,height,expandedWidth,expandedHeight,apiFramework) {
+                            StaticResource+ (creativeType) {},
+                            IFrameResource+ () {},
+                            HTMLResource+ () {},
+                            TrackingEvents+ () {
                                 Tracking (event) {}
                             },
-                            CompanionClickThrough () {},
-                            AltText () {},
-                            AdParameters () {}
+                            CompanionClickThrough+ () {},
+                            AltText+ () {},
+                            AdParameters+ () {}
                         }
                     },
-                    NonLinearAds () {
+                    NonLinearAds- () { // пока что не делаем
                         TrackingEvents () {
                             Tracking (event) {}
                         },
-                        NonLinear (id, width, height, expandedWidth, expandedHeight, scalable, maintainAspectRatio, minSuggestedDuration, apiFramework) {
+                        NonLinear (id,width,height, expandedWidth, expandedHeight, scalable, maintainAspectRatio, minSuggestedDuration, apiFramework) {
                             StaticResource (creativeType) {},
                             IFrameResource () {},
                             HTMLResource () {},
@@ -51,27 +53,29 @@ Vast (version) {
                     }
                 }
             },
-            Extensions () {
-                Extension () {}
+            Extensions+ () {
+                Extension+ () {}
             }
         },
-        Wrapper () {
-            AdSystem (version) {},
-            VASTAdTagURI () {},
-            Error () {},
-            Impression () {},
-            Creatives () {
-                Creative (AdID, id, sequence) {
-                    Lenear () {
-                        TrackingEvents () {
-                            Tracking (event) {}
+        Wrapper+ () {
+            AdSystem+ (version) {},
+            VASTAdTagURI+ () {},
+            Error+ () {}, // мб несколько
+            Error+ () {}, // мб несколько
+            Impression+ () {}, // мб несколько
+            Impression+ () {}, // мб несколько
+            Creatives+ () {
+                Creative+ (AdID, id, sequence) {
+                    Lenear+ () {
+                        TrackingEvents+ () {
+                            Tracking+ (event) {}
                         },
-                        VideoClicks () {
-                            ClickTracking (id) {}
+                        VideoClicks+ () {
+                            ClickTracking+ (id) {}
                         }
                     },
-                    CompanionAds () {
-                        Companion (id, height, width, expandedHeight, expandedWidth, apiFramework) {
+                    CompanionAds () {   // пока не так важно
+                        Companion (id,width,height,expandedWidth,expandedHeight,apiFramework) {
                             StaticResource (creativeType) {},
                             IFrameResource () {},
                             HTMLResource() {},
@@ -83,7 +87,7 @@ Vast (version) {
                             AdParameters () {}
                         }
                     },
-                    NonLinearAds () {
+                    NonLinearAds () { // тоже пока не так важно
                         TrackingEvents () {
                             Tracking (event) {}
                         },
@@ -97,7 +101,7 @@ Vast (version) {
                     }
                 }
             },
-            Extensions () {
+            Extensions () { // не нужен, ибо VASTAdTagURI
                 Extension() {}
             }
         }

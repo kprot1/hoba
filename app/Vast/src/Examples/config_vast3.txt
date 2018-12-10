@@ -1,0 +1,138 @@
+Vast (version,xmlns:xs) {
+    Ad (id,sequence) {
+        Inline () {
+            AdSystem (version) {},
+            AdTitle () {},
+            Description () {},
+            Advertiser () {}, (возможность, без реализации)
+            Pricing (model, currency) {}, (возможность, без реализации)
+            Survey () {},---
+            Error () {},
+            Impression (id) {},
+            Creatives () {
+                Creative (id,sequence,AdID,apiFramework) {
+                    CreativeExtensions () {-----
+                        CreativeExtension () {}
+                    },
+                    Linear(skipoffset+++) {
+                        AdParameters (xmlEncoded) {},
+                        Duration () {},
+                        MediaFiles () {
+                            MediaFile (id,height,width,bitrate,minBitrate,maxBitrate,codec,type,delivery,scalable,maintainAspectRatio,apiFramework) {}+++
+                        },
+                        TrackingEvents() {
+                            Tracking (event) {
+                                // Тут что-то прикольное с event="progress" (заполнять дефолтно на 1 сек)
+                                // event="skip"
+                                // различия в названиях нескольких событий
+                            }
+                        },
+                        VideoClicks () {
+                            ClickThrough (id) {},
+                            ClickTracking (id) {},
+                            CustomClick (id) {}----
+                        },
+                        Icons () { (пока что не закладыаем)
+                            Icon (program,width,height,xPosition,yPosition,duration,offset,apiFramework) {
+                                StaticResource (creativeType) {},
+                                IFrameResource (creativeType) {},
+                                HTMLResource (creativeType) {},
+                                IconClicks () {
+                                    IconClickThrough () {},
+                                    IconClickTracking (id) {}
+                                },
+                                IconViewTracking () {}
+                            }
+                        }
+                    },
+                    CompanionAds () {
+                        Companion (id,width,height,assetWidth,assetHeight,expandedWidth,expandedHeight,apiFramework,adSlotID) {
+                            StaticResource (creativeType) {},
+                            IFrameResource (creativeType) {},
+                            HTMLResource(creativeType) {},
+                            TrackingEvents () {
+                                Tracking (event) {}
+                            },
+                            CompanionClickThrough () {},
+                            CompanionClickTracking (id) {},
+                            AltText () {},+++
+                            AdParameters (xmlEncoded) {}
+                        }
+                    },
+                    NonLinearAds () {
+                        TrackingEvents () {
+                            Tracking (event) {}
+                        },
+                        NonLinear (id,width,height,expandedWidth,expandedHeight,scalable,maintainAspectRatio,minSuggestedDuration,apiFramework) {
+                            StaticResource (creativeType) {},
+                            IFrameResource (creativeType) {},
+                            HTMLResource (creativeType) {},
+                            NonLinearClickThrough () {},
+                            NonLinearClickTracking (id) {},
+                            AdParameters() {xmlEncoded}
+                        }
+                    }
+                }
+            },
+            Extensions () {
+                Extension (type) {}
+            }
+        },
+        Wrapper () {
+            AdSystem (version) {},
+            VASTAdTagURI () {},
+            Error () {},
+            Impression (id) {},
+            Creatives () {
+                Creative (AdID, id, sequence) {
+                    Lenear () {
+                        TrackingEvents () {
+                            Tracking (event) {}
+                        },
+                        VideoClicks () {
+                            ClickTracking (id) {},
+                            CustomClick (id) {}
+                        },
+                        Icons () {-----
+                            Icon (program,width,height,xPosition,yPosition,duration,offset,apiFramework) {
+                                StaticResource (creativeType) {},f
+                                IFrameResource (creativeType) {},
+                                HTMLResource (creativeType) {},
+                                IconClicks () {
+                                    IconClickThrough () {},
+                                    IconClickTracking() {}
+                                },
+                                IconViewTracking() {}
+                            }
+                        }
+                    },
+                    CompanionAds () {
+                        Companion (id,width,height,assetWidth,assetHeight,expandedWidth,expandedHeight,apiFramework,adSlotID) {
+                            StaticResource (creativeType) {},
+                            IFrameResource (creativeType) {},
+                            HTMLResource(creativeType) {},
+                            TrackingEvents () {
+                                Tracking (event) {}
+                            },
+                            CompanionClickThrough () {},
+                            CompanionClickTracking () {},
+                            AltText () {},
+                            AdParameters (xmlEncoded) {}
+                        }
+                    },
+                    NonLinearAds () {
+                        TrackingEvents () {
+                            Tracking (event) {}
+                        },
+                        NonLinear (id,width,height,expandedWidth,expandedHeight,scalable,maintainAspectRatio,minSuggestedDuration,apiFramework) {
+                            NonLinearClickThrough () {},
+                        }
+                    }
+                }
+            },
+            Extensions () {
+                Extension(type) {}
+            }
+        }
+    }
+}

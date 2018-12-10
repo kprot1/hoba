@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Vast\src\Constructor\XmlConstructor;
-use App\Vast\src\Nodes\Vast_1\AdIDNode;
+use App\Vast\src\Nodes\Vast_1\AdIdNode;
 use App\Vast\src\Nodes\Vast_1\AdNode;
 use App\Vast\src\Nodes\Vast_1\AdParametersNode;
 use App\Vast\src\Nodes\Vast_1\AdSystemNode;
@@ -15,7 +15,7 @@ use App\Vast\src\Nodes\Vast_1\DurationNode;
 use App\Vast\src\Nodes\Vast_1\InLineNode;
 use App\Vast\src\Nodes\Vast_1\MediaFileNode;
 use App\Vast\src\Nodes\Vast_1\MediaFilesNode;
-use App\Vast\src\Nodes\Vast_1\URLNode;
+use App\Vast\src\Nodes\Vast_1\UrlNode;
 use App\Vast\src\Nodes\Vast_1\VideoAdServingTemplateNode;
 use App\Vast\src\Nodes\Vast_1\VideoNode;
 
@@ -41,14 +41,14 @@ class TestController extends Controller
                         ->addAdTitleNode((new AdTitleNode())->setContent('5773100'))
                         ->addVideoNode((new VideoNode())
                             ->addDurationNode((new DurationNode())->setContent('00:00:01'))
-                            ->addAdIdNode((new AdIDNode())->setContent('preroll-1'))
+                            ->addAdIdNode((new AdIdNode())->setContent('preroll-1'))
                             ->addAdParametersNode((new AdParametersNode())->setApiFramework('vpaid'))
                             ->addMediaFilesNode((new MediaFilesNode())
                                 ->addMediaFileNode((new MediaFileNode())
                                     ->setWidth('370')
                                     ->setType('application/x-shockwave-flash')
                                     ->setHeight('270')
-                                    ->addUrlNode((new URLNode())->setContent($this->getBigContent()))
+                                    ->addUrlNode((new UrlNode())->setContent($this->getBigContent()))
                                 )
                             )
                         )

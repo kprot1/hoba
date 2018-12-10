@@ -4,7 +4,7 @@ namespace App\Vast\src\Nodes\Vast_1;
 
 use App\Vast\src\Nodes\AbstractNode;
 
-class DurationNode extends AbstractNode
+class AdIdNode extends AbstractNode
 {
 
 }

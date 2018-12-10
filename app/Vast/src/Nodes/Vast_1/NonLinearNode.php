@@ -1,27 +1,20 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: tutyo
- * Date: 07.12.2018
- * Time: 22:30
- */
 
 namespace App\Vast\src\Nodes\Vast_1;
-
 
 use App\Vast\src\Nodes\AbstractNode;
 
 class NonLinearNode extends AbstractNode
 {
-    public function setWidth(string $value): self
-    {
-        $this->setAttribute('width', $value);
-        return $this;
-    }
-
     public function setId(string $value): self
     {
         $this->setAttribute('id', $value);
+        return $this;
+    }
+
+    public function setWidth(string $value): self
+    {
+        $this->setAttribute('width', $value);
         return $this;
     }
 
@@ -49,7 +42,7 @@ class NonLinearNode extends AbstractNode
         return $this;
     }
 
-    public function addUrlNode(URLNode $node): self
+    public function addUrlNode(UrlNode $node): self
     {
         $this->addElement($node);
         return $this;
