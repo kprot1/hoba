@@ -3,16 +3,13 @@
 namespace App\Vast\src\Nodes\Vast_1;
 
 use App\Vast\src\Nodes\AbstractNode;
+use App\Vast\src\Traits\AddAdTitleNodeTrait;
 
 class InLineNode extends AbstractNode
 {
-    public function addAdSystemNode(AdSystemNode $node): self
-    {
-        $this->addElement($node);
-        return $this;
-    }
+    use AddAdTitleNodeTrait;
 
-    public function addAdTitleNode(AdTitleNode $node): self
+    public function addAdSystemNode(AdSystemNode $node): self
     {
         $this->addElement($node);
         return $this;
