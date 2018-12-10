@@ -3,9 +3,12 @@
 namespace App\Vast\src\Nodes\Vast_1;
 
 use App\Vast\src\Nodes\AbstractNode;
+use App\Vast\src\Traits\AddUrlNodeTrait;
 
 class MediaFileNode extends AbstractNode
 {
+    use AddUrlNodeTrait;
+
     public function setType(string $value): self
     {
         $this->setAttribute('type', $value);
@@ -33,12 +36,6 @@ class MediaFileNode extends AbstractNode
     public function setBitrate(string $value): self
     {
         $this->setAttribute('bitrate', $value);
-        return $this;
-    }
-
-    public function addUrlNode(UrlNode $node): self
-    {
-        $this->addElement($node);
         return $this;
     }
 }

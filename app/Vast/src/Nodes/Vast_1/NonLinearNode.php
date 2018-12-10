@@ -3,12 +3,15 @@
 namespace App\Vast\src\Nodes\Vast_1;
 
 use App\Vast\src\Nodes\AbstractNode;
+use App\Vast\src\Traits\AddUrlNodeTrait;
 use App\Vast\src\Traits\SetApiFrameworkTrait;
 use App\Vast\src\Traits\SetIdTrait;
 
 class NonLinearNode extends AbstractNode
 {
-    use SetIdTrait, SetApiFrameworkTrait;
+    use SetIdTrait,
+        SetApiFrameworkTrait,
+        AddUrlNodeTrait;
 
     public function setWidth(string $value): self
     {
@@ -31,12 +34,6 @@ class NonLinearNode extends AbstractNode
     public function setCreativeType(string $value): self
     {
         $this->setAttribute('creativeType', $value);
-        return $this;
-    }
-
-    public function addUrlNode(UrlNode $node): self
-    {
-        $this->addElement($node);
         return $this;
     }
 }
