@@ -4,10 +4,12 @@ namespace App\Vast\src\Nodes\Vast_1;
 
 use App\Vast\src\Nodes\AbstractNode;
 use App\Vast\src\Traits\AddAdTitleNodeTrait;
+use App\Vast\src\Traits\AddTrackingEventsNodeTrait;
 
 class InLineNode extends AbstractNode
 {
-    use AddAdTitleNodeTrait;
+    use AddAdTitleNodeTrait,
+        AddTrackingEventsNodeTrait;
 
     public function addAdSystemNode(AdSystemNode $node): self
     {
@@ -16,12 +18,6 @@ class InLineNode extends AbstractNode
     }
 
     public function addImpressionNode(ImpressionNode $node): self
-    {
-        $this->addElement($node);
-        return $this;
-    }
-
-    public function addTrackingEventsNode(TrackingEventsNode $node): self
     {
         $this->addElement($node);
         return $this;

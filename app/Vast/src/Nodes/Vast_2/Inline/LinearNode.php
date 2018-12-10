@@ -5,17 +5,13 @@ namespace App\Vast\src\Nodes\Vast_2\Inline;
 use App\Vast\src\Nodes\AbstractNode;
 use App\Vast\src\Nodes\Vast_1\DurationNode;
 use App\Vast\src\Nodes\Vast_1\MediaFilesNode;
-use App\Vast\src\Nodes\Vast_1\TrackingEventsNode;
+use App\Vast\src\Traits\AddTrackingEventsNodeTrait;
 
 class LinearNode extends AbstractNode
 {
-    public function addDurationNode(DurationNode $node): self
-    {
-        $this->addElement($node);
-        return $this;
-    }
+    use AddTrackingEventsNodeTrait;
 
-    public function addTrackingEventsNode(TrackingEventsNode $node): self
+    public function addDurationNode(DurationNode $node): self
     {
         $this->addElement($node);
         return $this;
