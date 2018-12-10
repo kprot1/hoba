@@ -7,21 +7,18 @@ use App\Vast\src\Traits\AddUrlNodeTrait;
 use App\Vast\src\Traits\SetApiFrameworkTrait;
 use App\Vast\src\Traits\SetHeightTrait;
 use App\Vast\src\Traits\SetIdTrait;
+use App\Vast\src\Traits\SetResourceTypeTrait;
 use App\Vast\src\Traits\SetWidthTrait;
 
 class NonLinearNode extends AbstractNode
 {
     use SetIdTrait,
-        SetApiFrameworkTrait,
-        AddUrlNodeTrait,
         SetWidthTrait,
-        SetHeightTrait;
+        SetHeightTrait,
+        SetApiFrameworkTrait,
+        SetResourceTypeTrait,
 
-    public function setResourceType(string $value): self
-    {
-        $this->setAttribute('resourceType', $value);
-        return $this;
-    }
+        AddUrlNodeTrait;
 
     public function setCreativeType(string $value): self
     {
