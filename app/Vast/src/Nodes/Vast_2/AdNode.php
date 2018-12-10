@@ -2,24 +2,16 @@
 
 namespace App\Vast\src\Nodes\Vast_2;
 
-use App\Vast\src\Nodes\AbstractNode;
-use App\Vast\src\Nodes\Vast_2\Inline\InlineNode;
+use App\Vast\src\Nodes\Vast_1\AdNode as AdNode_Vast1;
+use App\Vast\src\Nodes\Vast_1\InLineNode;
 use App\Vast\src\Nodes\Vast_2\Wrapper\WrapperNode;
 
-class AdNode extends AbstractNode
+/**
+ * @method setId(string $value) : \App\Vast\src\Nodes\Vast_1\AdNode
+ * @method addInlineNode(InLineNode $node) : \App\Vast\src\Nodes\Vast_1\AdNode
+ */
+class AdNode extends AdNode_Vast1
 {
-    public function setId(string $value): self
-    {
-        $this->setAttribute('id', $value);
-        return $this;
-    }
-
-    public function addInlineNode(InlineNode $node): self
-    {
-        $this->addElement($node);
-        return $this;
-    }
-
     public function addWrapperNode(WrapperNode $node): self
     {
         $this->addElement($node);

@@ -2,16 +2,13 @@
 
 namespace App\Vast\src\Nodes\Vast_1;
 
-use App\Vast\src\Nodes\AbstractNode;
+use App\Vast\src\Nodes\Vast_2\Inline\TrackingNode as TrackingNode_Vast2;
 
-class TrackingNode extends AbstractNode
+/**
+ * @method setEvent(string $value) : TrackingNode_Vast2
+ */
+class TrackingNode extends TrackingNode_Vast2
 {
-    public function setEvent(string $value): self
-    {
-        $this->setAttribute('event', $value);
-        return $this;
-    }
-
     public function addUrlNode(UrlNode $node): self
     {
         $this->addElement($node);

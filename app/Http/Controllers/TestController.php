@@ -3,21 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Vast\src\Constructor\XmlConstructor;
-use App\Vast\src\Nodes\Vast_1\AdIdNode;
-use App\Vast\src\Nodes\Vast_1\AdNode;
-use App\Vast\src\Nodes\Vast_1\AdParametersNode;
-use App\Vast\src\Nodes\Vast_1\AdSystemNode;
-use App\Vast\src\Nodes\Vast_1\AdTitleNode;
-use App\Vast\src\Nodes\Vast_1\CodeNode;
-use App\Vast\src\Nodes\Vast_1\CompanionAdsNode;
-use App\Vast\src\Nodes\Vast_1\CompanionNode;
-use App\Vast\src\Nodes\Vast_1\DurationNode;
-use App\Vast\src\Nodes\Vast_1\InLineNode;
-use App\Vast\src\Nodes\Vast_1\MediaFileNode;
-use App\Vast\src\Nodes\Vast_1\MediaFilesNode;
-use App\Vast\src\Nodes\Vast_1\UrlNode;
 use App\Vast\src\Nodes\Vast_1\VideoAdServingTemplateNode;
-use App\Vast\src\Nodes\Vast_1\VideoNode;
 
 class TestController extends Controller
 {
@@ -32,37 +18,6 @@ class TestController extends Controller
     public function createNode(): array
     {
         $mainNode = new VideoAdServingTemplateNode();
-
-        $mainNode->addAdNode(
-            (new AdNode())
-                ->setId('preroll-1')
-                ->addInlineNode((new InLineNode())
-                        ->addAdSystemNode((new AdSystemNode())->setContent('scanscout'))
-                        ->addAdTitleNode((new AdTitleNode())->setContent('5773100'))
-                        ->addVideoNode((new VideoNode())
-                            ->addDurationNode((new DurationNode())->setContent('00:00:01'))
-                            ->addAdIdNode((new AdIdNode())->setContent('preroll-1'))
-                            ->addAdParametersNode((new AdParametersNode())->setApiFramework('vpaid'))
-                            ->addMediaFilesNode((new MediaFilesNode())
-                                ->addMediaFileNode((new MediaFileNode())
-                                    ->setWidth('370')
-                                    ->setType('application/x-shockwave-flash')
-                                    ->setHeight('270')
-                                    ->addUrlNode((new UrlNode())->setContent($this->getBigContent()))
-                                )
-                            )
-                        )
-                        ->addCompanionAdsNode((new CompanionAdsNode())
-                            ->addCompanionNode((new CompanionNode())
-                                ->setWidth('300')
-                                ->setHeight('250')
-                                ->setId('573242')
-                                ->setResourceType('HTML')
-                                ->addCodeNode((new CodeNode())->setContent('11312312312312312'))
-                            )
-                        )
-                )
-        );
 
         return json_decode(json_encode($mainNode), true);
     }

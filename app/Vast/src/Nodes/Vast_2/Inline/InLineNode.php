@@ -3,8 +3,9 @@
 namespace App\Vast\src\Nodes\Vast_2\Inline;
 
 use App\Vast\src\Nodes\AbstractNode;
+use App\Vast\src\Nodes\Vast_1\AdTitleNode;
 
-class InlineNode extends AbstractNode
+class InLineNode extends AbstractNode
 {
     public function addAdSystemNode(AdSystemNode $node): self
     {

@@ -1,0 +1,6 @@
+ExtensionNode
+HTMLResourceNode
+IFrameResourceNode
+LinearNode (наследование)
+
+все наследования, и вынести методы @method

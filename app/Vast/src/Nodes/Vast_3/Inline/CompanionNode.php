@@ -2,32 +2,32 @@
 
 namespace App\Vast\src\Nodes\Vast_3\Inline;
 
-use App\Vast\src\Nodes\AbstractNode;
+use App\Vast\src\Nodes\Vast_1\TrackingEventsNode;
+use App\Vast\src\Nodes\Vast_2\Inline\AdParametersNode;
 use App\Vast\src\Nodes\Vast_2\Inline\AltTextNode;
 use App\Vast\src\Nodes\Vast_2\Inline\CompanionClickThroughNode;
+use App\Vast\src\Nodes\Vast_2\Inline\CompanionNode as CompanionNode_Vast2;
+use App\Vast\src\Nodes\Vast_2\Inline\HtmlResourceNode;
+use App\Vast\src\Nodes\Vast_2\Inline\IFrameResourceNode;
 use App\Vast\src\Nodes\Vast_2\Inline\StaticResourceNode;
-use App\Vast\src\Nodes\Vast_2\Inline\TrackingEventsNode;
 
-class CompanionNode extends AbstractNode
+/**
+ * @method setId(string $value) : CompanionNode_Vast2
+ * @method setWidth(string $value) : CompanionNode_Vast2
+ * @method setHeight(string $value) : CompanionNode_Vast2
+ * @method setExpandedWidth(string $value) : CompanionNode_Vast2
+ * @method setExpandedHeight(string $value) : CompanionNode_Vast2
+ * @method setApiFramework(string $value) : CompanionNode_Vast2
+ * @method addStaticResourceNode(StaticResourceNode $node) : CompanionNode_Vast2
+ * @method addIFrameResourceNode(IFrameResourceNode $node) : CompanionNode_Vast2
+ * @method addHtmlResourceNode(HtmlResourceNode $node) : CompanionNode_Vast2
+ * @method addTrackingEventsNode(TrackingEventsNode $node) : CompanionNode_Vast2
+ * @method addCompanionClickThroughNode(CompanionClickThroughNode $node) : CompanionNode_Vast2
+ * @method addAltTextNode(AltTextNode $node) : CompanionNode_Vast2
+ * @method addAdParametersNode(AdParametersNode $node) : CompanionNode_Vast2
+ */
+class CompanionNode extends CompanionNode_Vast2
 {
-    public function setId(string $value): self
-    {
-        $this->setAttribute('id', $value);
-        return $this;
-    }
-
-    public function setWidth(string $value): self
-    {
-        $this->setAttribute('width', $value);
-        return $this;
-    }
-
-    public function setHeight(string $value): self
-    {
-        $this->setAttribute('height', $value);
-        return $this;
-    }
-
     public function setAssetWidth(string $value): self
     {
         $this->setAttribute('assetWidth', $value);
@@ -40,73 +40,13 @@ class CompanionNode extends AbstractNode
         return $this;
     }
 
-    public function setExpandedWidth(string $value): self
-    {
-        $this->setAttribute('expandedWidth', $value);
-        return $this;
-    }
-
-    public function setExpandedHeight(string $value): self
-    {
-        $this->setAttribute('expandedHeight', $value);
-        return $this;
-    }
-
-    public function setApiFramework(string $value): self
-    {
-        $this->setAttribute('apiFramework', $value);
-        return $this;
-    }
-
     public function setAdSlotId(string $value): self
     {
         $this->setAttribute('AdSlotID', $value);
         return $this;
     }
 
-    public function addStaticResourceNode(StaticResourceNode $node): self
-    {
-        $this->addElement($node);
-        return $this;
-    }
-
-    public function addIFrameResourceNode(IFrameResourceNode $node): self
-    {
-        $this->addElement($node);
-        return $this;
-    }
-
-    public function addHtmlResourceNode(HtmlResourceNode $node): self
-    {
-        $this->addElement($node);
-        return $this;
-    }
-
-    public function addTrackingEventsNode(TrackingEventsNode $node): self
-    {
-        $this->addElement($node);
-        return $this;
-    }
-
-    public function addCompanionClickThroughNode(CompanionClickThroughNode $node): self
-    {
-        $this->addElement($node);
-        return $this;
-    }
-
     public function addCompanionClickTrackingNode(CompanionClickTrackingNode $node): self
-    {
-        $this->addElement($node);
-        return $this;
-    }
-
-    public function addAltTextNode(AltTextNode $node): self
-    {
-        $this->addElement($node);
-        return $this;
-    }
-
-    public function addAdParametersNode(AdParametersNode $node): self
     {
         $this->addElement($node);
         return $this;
