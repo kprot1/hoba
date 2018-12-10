@@ -5,6 +5,7 @@ namespace App\Vast\src\Nodes\Vast_2\Inline;
 use App\Vast\src\Nodes\AbstractNode;
 use App\Vast\src\Nodes\Vast_1\TrackingEventsNode;
 use App\Vast\src\Traits\SetApiFrameworkTrait;
+use App\Vast\src\Traits\SetHeightTrait;
 use App\Vast\src\Traits\SetIdTrait;
 use App\Vast\src\Traits\SetWidthTrait;
 
@@ -12,13 +13,8 @@ class CompanionNode extends AbstractNode
 {
     use SetIdTrait,
         SetApiFrameworkTrait,
-        SetWidthTrait;
-
-    public function setHeight(string $value): self
-    {
-        $this->setAttribute('height', $value);
-        return $this;
-    }
+        SetWidthTrait,
+        SetHeightTrait;
 
     public function setExpandedWidth(string $value): self
     {

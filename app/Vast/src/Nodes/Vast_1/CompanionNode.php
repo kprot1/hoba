@@ -3,19 +3,15 @@
 namespace App\Vast\src\Nodes\Vast_1;
 
 use App\Vast\src\Nodes\AbstractNode;
+use App\Vast\src\Traits\SetHeightTrait;
 use App\Vast\src\Traits\SetIdTrait;
 use App\Vast\src\Traits\SetWidthTrait;
 
 class CompanionNode extends AbstractNode
 {
     use SetIdTrait,
-        SetWidthTrait;
-
-    public function setHeight(string $value): self
-    {
-        $this->setAttribute('height', $value);
-        return $this;
-    }
+        SetWidthTrait,
+        SetHeightTrait;
 
     public function setResourceType(string $value): self
     {
