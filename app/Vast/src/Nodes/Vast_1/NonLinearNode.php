@@ -6,18 +6,14 @@ use App\Vast\src\Nodes\AbstractNode;
 use App\Vast\src\Traits\AddUrlNodeTrait;
 use App\Vast\src\Traits\SetApiFrameworkTrait;
 use App\Vast\src\Traits\SetIdTrait;
+use App\Vast\src\Traits\SetWidthTrait;
 
 class NonLinearNode extends AbstractNode
 {
     use SetIdTrait,
         SetApiFrameworkTrait,
-        AddUrlNodeTrait;
-
-    public function setWidth(string $value): self
-    {
-        $this->setAttribute('width', $value);
-        return $this;
-    }
+        AddUrlNodeTrait,
+        SetWidthTrait;
 
     public function setHeight(string $value): self
     {

@@ -5,20 +5,17 @@ namespace App\Vast\src\Nodes\Vast_2\Inline;
 use App\Vast\src\Nodes\AbstractNode;
 use App\Vast\src\Traits\SetApiFrameworkTrait;
 use App\Vast\src\Traits\SetIdTrait;
+use App\Vast\src\Traits\SetWidthTrait;
 
 class MediaFileNode extends AbstractNode
 {
-    use SetIdTrait, SetApiFrameworkTrait;
+    use SetIdTrait,
+        SetApiFrameworkTrait,
+        SetWidthTrait;
 
     public function setHeight(string $value): self
     {
         $this->setAttribute('height', $value);
-        return $this;
-    }
-
-    public function setWidth(string $value): self
-    {
-        $this->setAttribute('width', $value);
         return $this;
     }
 

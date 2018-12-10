@@ -4,20 +4,16 @@ namespace App\Vast\src\Nodes\Vast_1;
 
 use App\Vast\src\Nodes\AbstractNode;
 use App\Vast\src\Traits\AddUrlNodeTrait;
+use App\Vast\src\Traits\SetWidthTrait;
 
 class MediaFileNode extends AbstractNode
 {
-    use AddUrlNodeTrait;
+    use AddUrlNodeTrait,
+        SetWidthTrait;
 
     public function setType(string $value): self
     {
         $this->setAttribute('type', $value);
-        return $this;
-    }
-
-    public function setWidth(string $value): self
-    {
-        $this->setAttribute('width', $value);
         return $this;
     }
 
