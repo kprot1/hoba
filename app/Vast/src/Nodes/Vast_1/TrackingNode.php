@@ -2,10 +2,18 @@
 
 namespace App\Vast\src\Nodes\Vast_1;
 
-use App\Vast\src\Nodes\Vast_2\Inline\TrackingNode as TrackingNode_Vast2;
-use App\Vast\src\Traits\AddUrlNodeTrait;
+use App\Vast\src\Nodes\AbstractNode;
 
-class TrackingNode extends TrackingNode_Vast2
+class TrackingNode extends AbstractNode
 {
-    use AddUrlNodeTrait;
+    public function setEvent(string $value): self
+    {
+        $this->setAttribute('event', $value);
+        return $this;
+    }
+
+    public function createUrlNode(): UrlNode
+    {
+        return $this->addElement(new UrlNode());
+    }
 }

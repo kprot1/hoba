@@ -6,9 +6,8 @@ use App\Vast\src\Nodes\AbstractNode;
 
 class TrackingEventsNode extends AbstractNode
 {
-    public function addTrackingNode(TrackingNode $node): self
+    public function createTrackingNode(): TrackingNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new TrackingNode());
     }
 }

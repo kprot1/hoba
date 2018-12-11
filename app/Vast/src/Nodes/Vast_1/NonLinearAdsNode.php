@@ -6,9 +6,8 @@ use App\Vast\src\Nodes\AbstractNode;
 
 class NonLinearAdsNode extends AbstractNode
 {
-    public function addNonLinearNode(NonLinearNode $node): self
+    public function createNonLinearNode(): NonLinearNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new NonLinearNode());
     }
 }

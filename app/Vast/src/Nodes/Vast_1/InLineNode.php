@@ -3,41 +3,41 @@
 namespace App\Vast\src\Nodes\Vast_1;
 
 use App\Vast\src\Nodes\AbstractNode;
-use App\Vast\src\Traits\AddAdTitleNodeTrait;
-use App\Vast\src\Traits\AddTrackingEventsNodeTrait;
 
 class InLineNode extends AbstractNode
 {
-    use AddAdTitleNodeTrait,
-        AddTrackingEventsNodeTrait;
-
-    public function addAdSystemNode(AdSystemNode $node): self
+    public function createAdSystemNode(): AdSystemNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new AdSystemNode());
     }
 
-    public function addImpressionNode(ImpressionNode $node): self
+    public function createAdTitleNode(): AdTitleNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new AdTitleNode());
     }
 
-    public function addVideoNode(VideoNode $node): self
+    public function createImpressionNode(): ImpressionNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new ImpressionNode());
     }
 
-    public function addCompanionAdsNode(CompanionAdsNode $node): self
+    public function createTrackingEventsNode(): TrackingEventsNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new TrackingEventsNode);
     }
 
-    public function addNonLinearAdsNode(NonLinearAdsNode $node): self
+    public function createVideoNode(): VideoNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new VideoNode());
+    }
+
+    public function createCompanionAdsNode(): CompanionAdsNode
+    {
+        return $this->addElement(new CompanionAdsNode());
+    }
+
+    public function createNonLinearAdsNode(): NonLinearAdsNode
+    {
+        return $this->addElement(new NonLinearAdsNode());
     }
 }

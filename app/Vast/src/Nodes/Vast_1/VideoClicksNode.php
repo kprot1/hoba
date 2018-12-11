@@ -6,9 +6,8 @@ use App\Vast\src\Nodes\AbstractNode;
 
 class VideoClicksNode extends AbstractNode
 {
-    public function addClickThroughNode(ClickThroughNode $node): self
+    public function createClickThroughNode(): ClickThroughNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new ClickThroughNode());
     }
 }

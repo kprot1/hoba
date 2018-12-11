@@ -6,9 +6,8 @@ use App\Vast\src\Nodes\AbstractNode;
 
 class VideoAdServingTemplateNode extends AbstractNode
 {
-    public function addAdNode(AdNode $node)
+    public function createAdNode(): AdNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new AdNode());
     }
 }

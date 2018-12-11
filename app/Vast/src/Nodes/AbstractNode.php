@@ -27,10 +27,10 @@ abstract class AbstractNode
         return $this;
     }
 
-    protected function addElement(AbstractNode $element): self
+    protected function addElement($element)
     {
         $this->elements[] = $element;
-        return $this;
+        return $element;
     }
 
     public function setContent(string $content)

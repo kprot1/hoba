@@ -6,33 +6,28 @@ use App\Vast\src\Nodes\AbstractNode;
 
 class VideoNode extends AbstractNode
 {
-    public function addDurationNode(DurationNode $node): self
+    public function createDurationNode(): DurationNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new DurationNode());
     }
 
-    public function addAdIdNode(AdIdNode $node): self
+    public function createAdIdNode(): AdIdNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new AdIdNode());
     }
 
-    public function addAdParametersNode(AdParametersNode $node): self
+    public function createAdParametersNode(): AdParametersNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new AdParametersNode());
     }
 
-    public function addVideoClicksNode(VideoClicksNode $node): self
+    public function createVideoClicksNode(): VideoClicksNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new VideoClicksNode());
     }
 
-    public function addMediaFilesNode(MediaFilesNode $node): self
+    public function createMediaFilesNode(): MediaFilesNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new MediaFilesNode());
     }
 }

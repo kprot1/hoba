@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Vast\src\Factory\Factory;
 use App\Vast\src\XmlConstructor\XmlConstructor;
 use App\Vast\src\Nodes\Vast_1\AdIdNode;
 use App\Vast\src\Nodes\Vast_1\AdNode;
@@ -36,26 +37,70 @@ class TestController extends Controller
 
         $result = 0;
 
-//        for($i=0;$i<10000;$i++){
-//            $start = microtime(true);
-//            $hob = $this->createVast1Node();
-//            $output = $xmlConstructor->fromArray([$hob])->toOutput();
-//            $result += (microtime(true) - $start);
-//        }
+        for($i=0;$i<10000;$i++){
+            $start = microtime(true);
+            $hob = $this->createVast1Node();
+            $output = $xmlConstructor->fromArray([$hob->toArray()])->toOutput();
+            $result += (microtime(true) - $start);
+        }
 
-        return $xmlConstructor->fromArray([$this->createVast1Node()])->toOutput();
+//        $vastDocument = $this->createVast1Node();
+
+//        return $xmlConstructor->fromArray([$vastDocument->toArray()])->toOutput();
+
+        return $result;
+    }
+
+    public function createVast1Node()
+    {
+        $factory = new Factory();
+        $vast = $factory->createVast1();
+
+        $adNode = $vast->createAdNode();
+        $adNode->setId('preroll-1');
+
+        $inlineNode = $adNode->createInLineNode();
+
+        $inlineNode->createAdSystemNode()->setContent('scanscout');
+        $inlineNode->createAdTitleNode()->setContent('5773100');
+
+        $videoNode = $inlineNode->createVideoNode();
+        $videoNode->createDurationNode()->setContent('00:00:01');
+        $videoNode->createAdIdNode()->setContent('preroll-1');
+        $videoNode->createAdParametersNode()->setApiFramework('vpaid');
+
+        $videoNode
+            ->createMediaFilesNode()
+                ->createMediaFileNode()
+                    ->setWidth('370')
+                    ->setHeight('270')
+                    ->setType('application/x-shockwave-flash')
+                    ->createUrlNode()
+                        ->setContent($this->getBigContent());
+
+        $inlineNode
+            ->createCompanionAdsNode()
+                ->createCompanionNode()
+                    ->setWidth('300')
+                    ->setHeight('270')
+                    ->setId('573242')
+                    ->setResourceType('HTML')
+                    ->createCodeNode()
+                        ->setContent('11312312312312312');
+
+        return $vast;
     }
 
 
 
-    private function createVast1Node(): array
+    private function createVast1Node1(): array
     {
         $mainNode = new VideoAdServingTemplateNode();
 
-        $mainNode->addAdNode(
+        $mainNode->createAd(
             (new AdNode())
                 ->setId('preroll-1')
-                ->addInlineNode((new InLineNode())
+                ->createInLine((new InLineNode())
                         ->addAdSystemNode((new AdSystemNode())->setContent('scanscout'))
                         ->addAdTitleNode((new AdTitleNode())->setContent('5773100'))
                         ->addVideoNode((new VideoNode())

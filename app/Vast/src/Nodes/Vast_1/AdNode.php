@@ -9,9 +9,8 @@ class AdNode extends AbstractNode
 {
     use SetIdTrait;
 
-    public function addInlineNode(InLineNode $node): self
+    public function createInLineNode(): InLineNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new InLineNode());
     }
 }

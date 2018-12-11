@@ -6,9 +6,8 @@ use App\Vast\src\Nodes\AbstractNode;
 
 class MediaFilesNode extends AbstractNode
 {
-    public function addMediaFileNode(MediaFileNode $node): self
+    public function createMediaFileNode(): MediaFileNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new MediaFileNode());
     }
 }

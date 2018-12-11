@@ -15,9 +15,8 @@ class CompanionNode extends AbstractNode
         SetHeightTrait,
         SetResourceTypeTrait;
 
-    public function addCodeNode(CodeNode $node): self
+    public function createCodeNode(): CodeNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new CodeNode());
     }
 }
