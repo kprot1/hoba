@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Vast\src\Constructor\XmlConstructor;
+use App\Vast\src\XmlConstructor\XmlConstructor;
 use App\Vast\src\Nodes\Vast_1\AdIdNode;
 use App\Vast\src\Nodes\Vast_1\AdNode;
 use App\Vast\src\Nodes\Vast_1\AdParametersNode;

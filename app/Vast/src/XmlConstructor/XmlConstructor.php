@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Vast\src\Constructor;
+namespace App\Vast\src\XmlConstructor;
 
 
 class XmlConstructor extends \XMLWriter
