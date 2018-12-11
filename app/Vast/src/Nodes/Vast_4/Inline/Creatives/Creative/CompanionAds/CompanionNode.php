@@ -1,8 +1,10 @@
 <?php
 
-namespace App\Vast\src\Nodes\Vast_3\Inline;
+namespace App\Vast\src\Nodes\Vast_4\Inline\Creatives\Creative\CompanionAds;
 
 use App\Vast\src\Nodes\AbstractNode;
+use App\Vast\src\Nodes\Vast_4\Inline\Creatives\Creative\Linear\AdParametersNode;
+use App\Vast\src\Nodes\Vast_4\Inline\Creatives\Creative\Linear\TrackingEventsNode;
 
 class CompanionNode extends AbstractNode
 {
@@ -57,6 +59,12 @@ class CompanionNode extends AbstractNode
     public function setAdSlotId(string $value): self
     {
         $this->setAttribute('AdSlotID', $value);
+        return $this;
+    }
+
+    public function setPxRatio(string $value): self
+    {
+        $this->setAttribute('pxratio', $value);
         return $this;
     }
 

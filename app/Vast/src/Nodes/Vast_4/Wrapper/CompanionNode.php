@@ -1,8 +1,16 @@
 <?php
 
-namespace App\Vast\src\Nodes\Vast_3\Inline;
+namespace App\Vast\src\Nodes\Vast_4\Wrapper;
 
 use App\Vast\src\Nodes\AbstractNode;
+use App\Vast\src\Nodes\Vast_4\Inline\Creatives\Creative\CompanionAds\AltTextNode;
+use App\Vast\src\Nodes\Vast_4\Inline\Creatives\Creative\CompanionAds\CompanionClickThroughNode;
+use App\Vast\src\Nodes\Vast_4\Inline\Creatives\Creative\CompanionAds\CompanionClickTrackingNode;
+use App\Vast\src\Nodes\Vast_4\Inline\Creatives\Creative\CompanionAds\HtmlResourceNode;
+use App\Vast\src\Nodes\Vast_4\Inline\Creatives\Creative\CompanionAds\IFrameResourceNode;
+use App\Vast\src\Nodes\Vast_4\Inline\Creatives\Creative\CompanionAds\StaticResourceNode;
+use App\Vast\src\Nodes\Vast_4\Inline\Creatives\Creative\Linear\AdParametersNode;
+use App\Vast\src\Nodes\Vast_4\Inline\Creatives\Creative\Linear\TrackingEventsNode;
 
 class CompanionNode extends AbstractNode
 {
@@ -57,6 +65,36 @@ class CompanionNode extends AbstractNode
     public function setAdSlotId(string $value): self
     {
         $this->setAttribute('AdSlotID', $value);
+        return $this;
+    }
+
+    public function stLogoTile(string $value): self
+    {
+        $this->setAttribute('logoTile', $value);
+        return $this;
+    }
+
+    public function stLogoTitle(string $value): self
+    {
+        $this->setAttribute('logoTitle', $value);
+        return $this;
+    }
+
+    public function stLogoArtist(string $value): self
+    {
+        $this->setAttribute('logoArtist', $value);
+        return $this;
+    }
+
+    public function stLogoURL(string $value): self
+    {
+        $this->setAttribute('logoURL', $value);
+        return $this;
+    }
+
+    public function setPxRatio(string $value): self
+    {
+        $this->setAttribute('pxratio', $value);
         return $this;
     }
 

@@ -3,12 +3,11 @@
 namespace App\Vast\src\Nodes\Vast_3\Wrapper;
 
 use App\Vast\src\Nodes\AbstractNode;
-use App\Vast\src\Nodes\Vast_2\Inline\AdSystemNode;
-use App\Vast\src\Nodes\Vast_2\Inline\CreativesNode;
-use App\Vast\src\Nodes\Vast_2\Inline\ErrorNode;
-use App\Vast\src\Nodes\Vast_2\Inline\ExtensionsNode;
-use App\Vast\src\Nodes\Vast_2\Inline\ImpressionNode;
-use App\Vast\src\Nodes\Vast_2\Wrapper\VastAdTagUriNode;
+use App\Vast\src\Nodes\Vast_3\Inline\AdSystemNode;
+use App\Vast\src\Nodes\Vast_3\Inline\CreativesNode;
+use App\Vast\src\Nodes\Vast_3\Inline\ErrorNode;
+use App\Vast\src\Nodes\Vast_3\Inline\ExtensionsNode;
+use App\Vast\src\Nodes\Vast_3\Inline\ImpressionNode;
 
 class WrapperNode extends AbstractNode
 {

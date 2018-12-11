@@ -1,8 +1,11 @@
 <?php
 
-namespace App\Vast\src\Nodes\Vast_3\Inline;
+namespace App\Vast\src\Nodes\Vast_4\Inline;
 
 use App\Vast\src\Nodes\AbstractNode;
+use App\Vast\src\Nodes\Vast_4\Inline\AdVerifications\AdVerificationsNode;
+use App\Vast\src\Nodes\Vast_4\Inline\Creatives\CreativesNode;
+use App\Vast\src\Nodes\Vast_4\Inline\ViewableImpression\ViewableImpressionNode;
 
 class InlineNode extends AbstractNode
 {
@@ -43,6 +46,24 @@ class InlineNode extends AbstractNode
     }
 
     public function addImpressionNode(ImpressionNode $node): self
+    {
+        $this->addElement($node);
+        return $this;
+    }
+
+    public function addCategoryNode(CategoryNode $node): self
+    {
+        $this->addElement($node);
+        return $this;
+    }
+
+    public function addViewableImpressionNode(ViewableImpressionNode $node): self
+    {
+        $this->addElement($node);
+        return $this;
+    }
+
+    public function addAdVerificationsNode(AdVerificationsNode $node): self
     {
         $this->addElement($node);
         return $this;
