@@ -9,6 +9,8 @@
 namespace App\Vast\src\Nodes;
 
 
+use App\Vast\src\XmlConstructor\XmlConstructor;
+
 abstract class AbstractNode
 {
     protected $tag;
@@ -18,7 +20,20 @@ abstract class AbstractNode
 
     public function __construct()
     {
-        $this->tag = str_replace('Node', '', (new \ReflectionClass(static::class))->getShortName());
+        $this->initialTag();
+    }
+
+    public function toXml(): string
+    {
+        $xmlConstructor = new XmlConstructor();
+
+        return $xmlConstructor->fromArray([$this->toArray()])->toOutput();
+    }
+
+    public function setContent(string $content)
+    {
+        $this->content = $content;
+        return $this;
     }
 
     protected function setAttribute(string $key, string $value): self
@@ -33,13 +48,12 @@ abstract class AbstractNode
         return $element;
     }
 
-    public function setContent(string $content)
+    protected function initialTag()
     {
-        $this->content = $content;
-        return $this;
+        $this->tag = str_replace('Node', '', (new \ReflectionClass(static::class))->getShortName());
     }
 
-    public function toArray()
+    protected function toArray(): array
     {
         $getElementsRecourse = function (array $elements) {
             $result = [];
