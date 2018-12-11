@@ -11,10 +11,10 @@ namespace App\Vast\src\Nodes;
 
 abstract class AbstractNode
 {
-    public $tag;
-    public $attributes = [];
-    public $elements = [];
-    public $content;
+    protected $tag;
+    protected $attributes = [];
+    protected $elements = [];
+    protected $content;
 
     public function __construct()
     {
@@ -37,5 +37,23 @@ abstract class AbstractNode
     {
         $this->content = $content;
         return $this;
+    }
+
+    public function toArray()
+    {
+        $getElementsRecourse = function (array $elements) {
+            $result = [];
+            foreach ($elements as $element) {
+                $result[] = $element->toArray();
+            }
+            return $result;
+        };
+
+        return [
+            'tag' => $this->tag,
+            'attributes' => $this->attributes,
+            'elements' => $getElementsRecourse($this->elements),
+            'content' => $this->content
+        ];
     }
 }
