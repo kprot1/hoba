@@ -12,9 +12,8 @@ class VastNode extends AbstractNode
         return $this;
     }
 
-    public function addAdNode(AdNode $adNode): self
+    public function createAdNode(): AdNode
     {
-        $this->addElement($adNode);
-        return $this;
+        return $this->addElement(new AdNode());
     }
 }

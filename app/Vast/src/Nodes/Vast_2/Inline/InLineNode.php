@@ -1,62 +1,43 @@
 <?php
 
-namespace App\Vast\src\Nodes\Vast_3\Inline;
+namespace App\Vast\src\Nodes\Vast_2\Inline;
 
 use App\Vast\src\Nodes\AbstractNode;
 
 class InlineNode extends AbstractNode
 {
-    public function addAdSystemNode(AdSystemNode $node): self
+    public function createAdSystemNode(): AdSystemNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new AdSystemNode());
     }
 
-    public function addAdTitleNode(AdTitleNode $node): self
+    public function createdAdTitleNode(): AdTitleNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new AdTitleNode());
     }
 
-    public function addDescriptionNode(DescriptionNode $node): self
+    public function createDescriptionNode(): DescriptionNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new DescriptionNode());
     }
 
-    public function addAdvertiserNode(AdvertiserNode $node): self
+    public function createErrorNode(): ErrorNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new ErrorNode());
     }
 
-    public function addPricingNode(PricingNode $node): self
+    public function createImpressionNode(): ImpressionNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new ImpressionNode());
     }
 
-    public function addErrorNode(ErrorNode $node): self
+    public function createCreativesNode(): CreativesNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new CreativesNode());
     }
 
-    public function addImpressionNode(ImpressionNode $node): self
+    public function createExtensionsNode(): ExtensionsNode
     {
-        $this->addElement($node);
-        return $this;
-    }
-
-    public function addCreativesNode(CreativesNode $node): self
-    {
-        $this->addElement($node);
-        return $this;
-    }
-
-    public function addExtensionsNode(ExtensionsNode $node): self
-    {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new ExtensionsNode());
     }
 }

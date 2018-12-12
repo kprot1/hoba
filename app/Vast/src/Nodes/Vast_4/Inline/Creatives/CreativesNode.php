@@ -7,9 +7,8 @@ use App\Vast\src\Nodes\Vast_4\Inline\Creatives\Creative\CreativeNode;
 
 class CreativesNode extends AbstractNode
 {
-    public function addCreativeNode(CreativeNode $node): self
+    public function createCreativeNode(): CreativeNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new CreativeNode());
     }
 }

@@ -12,33 +12,28 @@ class LinearNode extends AbstractNode
         return $this;
     }
 
-    public function addAdParametersNode(AdParametersNode $node): self
+    public function createAdParametersNode(AdParametersNode $node): AdParametersNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new AdParametersNode());
     }
 
-    public function addDurationNode(DurationNode $node): self
+    public function createDurationNode(DurationNode $node): DurationNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new DurationNode());
     }
 
-    public function addMediaFilesNode(MediaFilesNode $node): self
+    public function createMediaFilesNode(MediaFilesNode $node): MediaFilesNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new MediaFilesNode());
     }
 
-    public function addTrackingEventsNode(TrackingEventsNode $node): self
+    public function createTrackingEventsNode(TrackingEventsNode $node): TrackingEventsNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new TrackingEventsNode());
     }
 
-    public function addVideoClicksNode(VideoClicksNode $node): self
+    public function createVideoClicksNode(VideoClicksNode $node): VideoClicksNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new VideoClicksNode());
     }
 }

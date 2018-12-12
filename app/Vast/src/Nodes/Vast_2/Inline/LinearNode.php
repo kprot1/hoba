@@ -3,38 +3,31 @@
 namespace App\Vast\src\Nodes\Vast_2\Inline;
 
 use App\Vast\src\Nodes\AbstractNode;
-use App\Vast\src\Nodes\Vast_1\DurationNode;
-use App\Vast\src\Nodes\Vast_1\MediaFilesNode;
 
 class LinearNode extends AbstractNode
 {
-    public function addDurationNode(DurationNode $node): self
+    public function createDurationNode(): DurationNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new DurationNode());
     }
 
-    public function addAdParametersNode(AdParametersNode $node): self
+    public function createAdParametersNode(): AdParametersNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new AdParametersNode());
     }
 
-    public function addVideoClicksNode(VideoClicksNode $node): self
+    public function createVideoClicksNode(): VideoClicksNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new VideoClicksNode());
     }
 
-    public function addMediaFilesNode(MediaFilesNode $node): self
+    public function createMediaFilesNode(): MediaFilesNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new MediaFilesNode());
     }
 
-    public function addTrackingEventsNode(TrackingEventsNode $node): self
+    public function createTrackingEventsNode(): TrackingEventsNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new TrackingEventsNode());
     }
 }

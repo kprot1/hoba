@@ -12,21 +12,18 @@ class ViewableImpressionNode extends AbstractNode
         return $this;
     }
 
-    public function addViewableNode(ViewableNode $node): self
+    public function createViewableNode(): ViewableNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new ViewableNode());
     }
 
-    public function addNotViewableNode(NotViewableNode $node): self
+    public function createNotViewableNode(): NotViewableNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new NotViewableNode());
     }
 
-    public function addViewUndeterminedNode(ViewUndeterminedNode $node): self
+    public function createViewUndeterminedNode(): ViewUndeterminedNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new ViewUndeterminedNode());
     }
 }

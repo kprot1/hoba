@@ -6,9 +6,9 @@ use App\Vast\src\Nodes\AbstractNode;
 
 class AdSystemNode extends AbstractNode
 {
-    public function setVersion(string $event): self
+    public function setVersion(string $value): self
     {
-        $this->setAttribute('version', $event);
+        $this->setAttribute('version', $value);
         return $this;
     }
 }

@@ -9,75 +9,63 @@ use App\Vast\src\Nodes\Vast_4\Inline\ViewableImpression\ViewableImpressionNode;
 
 class InlineNode extends AbstractNode
 {
-    public function addAdSystemNode(AdSystemNode $node): self
+    public function createAdSystemNode(): AdSystemNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new AdSystemNode());
     }
 
-    public function addAdTitleNode(AdTitleNode $node): self
+    public function createAdTitleNode(): AdTitleNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new AdTitleNode());
     }
 
-    public function addDescriptionNode(DescriptionNode $node): self
+    public function createDescriptionNode(): DescriptionNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new DescriptionNode());
     }
 
-    public function addAdvertiserNode(AdvertiserNode $node): self
+    public function createAdvertiserNode(): AdvertiserNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new AdvertiserNode());
     }
 
-    public function addPricingNode(PricingNode $node): self
+    public function createPricingNode(): PricingNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new PricingNode());
     }
 
-    public function addErrorNode(ErrorNode $node): self
+    public function createErrorNode(): ErrorNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new ErrorNode());
     }
 
-    public function addImpressionNode(ImpressionNode $node): self
+    public function createImpressionNode(): ImpressionNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new ImpressionNode());
     }
 
-    public function addCategoryNode(CategoryNode $node): self
+    public function createCategoryNode(): CategoryNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new CategoryNode());
     }
 
-    public function addViewableImpressionNode(ViewableImpressionNode $node): self
+    public function createViewableImpressionNode(): ViewableImpressionNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new ViewableImpressionNode());
     }
 
-    public function addAdVerificationsNode(AdVerificationsNode $node): self
+    public function createAdVerificationsNode(): AdVerificationsNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new AdVerificationsNode());
     }
 
-    public function addCreativesNode(CreativesNode $node): self
+    public function createCreativesNode(): CreativesNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new CreativesNode());
     }
 
-    public function addExtensionsNode(ExtensionsNode $node): self
+    public function createExtensionsNode(): ExtensionsNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new ExtensionsNode());
     }
 }

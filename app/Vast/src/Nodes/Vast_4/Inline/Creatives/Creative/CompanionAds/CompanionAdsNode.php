@@ -6,9 +6,8 @@ use App\Vast\src\Nodes\AbstractNode;
 
 class CompanionAdsNode extends AbstractNode
 {
-    public function addCompanionNode(CompanionNode $node): self
+    public function createCompanionNode(): CompanionNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new CompanionNode());
     }
 }

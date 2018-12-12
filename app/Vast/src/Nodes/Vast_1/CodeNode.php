@@ -6,5 +6,4 @@ use App\Vast\src\Nodes\AbstractNode;
 
 class CodeNode extends AbstractNode
 {
-    public $cdata = true;
 }

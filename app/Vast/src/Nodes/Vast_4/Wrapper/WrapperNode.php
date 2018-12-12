@@ -14,57 +14,48 @@ use App\Vast\src\Nodes\Vast_4\Inline\ViewableImpression\ViewableImpressionNode;
 
 class WrapperNode extends AbstractNode
 {
-    public function addAdSystemNode(AdSystemNode $node): self
+    public function createAdSystemNode(): AdSystemNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new AdSystemNode());
     }
 
-    public function addVastAdTagUriNode(VastAdTagUriNode $node): self
+    public function createVastAdTagUriNode(): VastAdTagUriNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new VastAdTagUriNode());
     }
 
-    public function addErrorNode(ErrorNode $node): self
+    public function createErrorNode(): ErrorNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new ErrorNode());
     }
 
-    public function addImpressionNode(ImpressionNode $node): self
+    public function createImpressionNode(): ImpressionNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new ImpressionNode());
     }
 
-    public function addPricingNode(PricingNode $node): self
+    public function createPricingNode(): PricingNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new PricingNode());
     }
 
-    public function addViewableImpressionNode(ViewableImpressionNode $node): self
+    public function createViewableImpressionNode(): ViewableImpressionNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new ViewableImpressionNode());
     }
 
-    public function addAdVerificationsNode(AdVerificationsNode $node): self
+    public function createAdVerificationsNode(): AdVerificationsNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new AdVerificationsNode());
     }
 
-    public function addCreativesNode(CompanionAdsNode $node): self
+    public function createCreativesNode(): CreativesNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new CreativesNode());
     }
 
-    public function addExtensionsNode(ExtensionsNode $node): self
+    public function createExtensionsNode(): ExtensionsNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new ExtensionsNode());
     }
 }

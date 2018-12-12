@@ -11,39 +11,33 @@ use App\Vast\src\Nodes\Vast_3\Inline\ImpressionNode;
 
 class WrapperNode extends AbstractNode
 {
-    public function addAdSystemNode(AdSystemNode $node): self
+    public function createAdSystemNode(): AdSystemNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new AdSystemNode());
     }
 
-    public function addVastAdTagUri(VastAdTagUriNode $node): self
+    public function createVastAdTagUri(): VastAdTagUriNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new VastAdTagUriNode());
     }
 
-    public function addErrorNode(ErrorNode $node): self
+    public function createErrorNode(): ErrorNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new ErrorNode());
     }
 
-    public function addImpressionNode(ImpressionNode $node): self
+    public function createImpressionNode(): ImpressionNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new ImpressionNode());
     }
 
-    public function addCreativesNode(CreativesNode $node): self
+    public function createCreativesNode(): CreativesNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new CreativesNode());
     }
 
-    public function addExtensionsNode(ExtensionsNode $node): self
+    public function createExtensionsNode(): ExtensionsNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new ExtensionsNode());
     }
 }

@@ -32,21 +32,18 @@ class CreativeNode extends AbstractNode
         return $this;
     }
 
-    public function addUniversalAdIdNode(UniversalAdIdNode $node): self
+    public function createUniversalAdIdNode(): UniversalAdIdNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new UniversalAdIdNode());
     }
 
-    public function addLinearNode(LinearNode $node): self
+    public function createLinearNode(): LinearNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new LinearNode());
     }
 
-    public function addCompanionAdsNode(CompanionAdsNode $node): self
+    public function createCompanionAdsNode(): CompanionAdsNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new CompanionAdsNode());
     }
 }

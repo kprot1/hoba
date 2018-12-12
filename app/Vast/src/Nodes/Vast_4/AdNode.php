@@ -21,21 +21,18 @@ class AdNode extends AbstractNode
         return $this;
     }
 
-    public function addInlineNode(InlineNode $node): self
+    public function createInlineNode(): InlineNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new InlineNode());
     }
 
-    public function addWrapperNode(WrapperNode $node): self
+    public function createWrapperNode(): WrapperNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new WrapperNode());
     }
 
-    public function addErrorNode(ErrorNode $node): self
+    public function createErrorNode(): ErrorNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new ErrorNode());
     }
 }

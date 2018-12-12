@@ -2,19 +2,31 @@
 
 namespace App\Vast\src\Nodes\Vast_3;
 
-use App\Vast\src\Nodes\Vast_2\AdNode as AdNode_Vast2;
+use App\Vast\src\Nodes\AbstractNode;
+use App\Vast\src\Nodes\Vast_3\Inline\InLineNode;
+use App\Vast\src\Nodes\Vast_3\Wrapper\WrapperNode;
 
-class AdNode extends AdNode_Vast2
+class AdNode extends AbstractNode
 {
+    public function setId(string $id): self
+    {
+        $this->setAttribute('id', $id);
+        return $this;
+    }
+
     public function setSequence(string $value): self
     {
         $this->setAttribute('sequence', $value);
         return $this;
     }
 
-    public function addWrapperNode(WrapperNode $node): self
+    public function createInLineNode(): InLineNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new InLineNode());
+    }
+
+    public function createWrapperNode(): WrapperNode
+    {
+        return $this->addElement(new WrapperNode());
     }
 }

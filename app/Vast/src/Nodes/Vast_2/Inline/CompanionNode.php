@@ -41,45 +41,38 @@ class CompanionNode extends AbstractNode
         return $this;
     }
 
-    public function addStaticResourceNode(StaticResourceNode $node): self
+    public function createStaticResourceNode(): StaticResourceNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new StaticResourceNode());
     }
 
-    public function addIFrameResourceNode(IFrameResourceNode $node): self
+    public function createIFrameResourceNode(): IFrameResourceNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new IFrameResourceNode());
     }
 
-    public function addHtmlResourceNode(HtmlResourceNode $node): self
+    public function createHtmlResourceNode(): HtmlResourceNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new HtmlResourceNode());
     }
 
-    public function addCompanionClickThroughNode(CompanionClickThroughNode $node): self
+    public function createCompanionClickThroughNode(): CompanionClickThroughNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new CompanionClickThroughNode());
     }
 
-    public function addAltTextNode(AltTextNode $node): self
+    public function createAltTextNode(): AltTextNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new AltTextNode());
     }
 
-    public function addAdParametersNode(AdParametersNode $node): self
+    public function createAdParametersNode(): AdParametersNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new AdParametersNode());
     }
 
-    public function addTrackingEventsNode(TrackingEventsNode $node): self
+    public function createTrackingEventsNode(): TrackingEventsNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new TrackingEventsNode());
     }
 }

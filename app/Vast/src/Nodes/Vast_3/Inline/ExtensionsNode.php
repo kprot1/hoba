@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Vast\src\Nodes\Vast_4\Inline;
+namespace App\Vast\src\Nodes\Vast_3\Inline;
 
 use App\Vast\src\Nodes\AbstractNode;
 

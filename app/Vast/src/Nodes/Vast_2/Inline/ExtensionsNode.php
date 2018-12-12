@@ -6,9 +6,8 @@ use App\Vast\src\Nodes\AbstractNode;
 
 class ExtensionsNode extends AbstractNode
 {
-    public function addExtension(ExtensionNode $node): self
+    public function createExtensionNode(): ExtensionNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new ExtensionNode());
     }
 }

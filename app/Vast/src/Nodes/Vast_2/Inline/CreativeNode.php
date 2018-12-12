@@ -3,7 +3,6 @@
 namespace App\Vast\src\Nodes\Vast_2\Inline;
 
 use App\Vast\src\Nodes\AbstractNode;
-use App\Vast\src\Nodes\Vast_1\CompanionAdsNode;
 
 class CreativeNode extends AbstractNode
 {
@@ -25,15 +24,13 @@ class CreativeNode extends AbstractNode
         return $this;
     }
 
-    public function addLinearNode(LinearNode $node): self
+    public function createLinearNode(): LinearNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new LinearNode());
     }
 
-    public function addCompanionAdsNode(CompanionAdsNode $node): self
+    public function createCompanionAdsNode(): CompanionAdsNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new CompanionAdsNode());
     }
 }

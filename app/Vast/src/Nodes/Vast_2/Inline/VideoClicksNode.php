@@ -2,17 +2,17 @@
 
 namespace App\Vast\src\Nodes\Vast_2\Inline;
 
-use App\Vast\src\Nodes\Vast_1\ClickThroughNode;
-use App\Vast\src\Nodes\Vast_1\VideoClicksNode as VideoClicksNode_Vast1;
+use App\Vast\src\Nodes\AbstractNode;
 
-/**
- * @method addClickThroughNode(ClickThroughNode $node)
- */
-class VideoClicksNode extends VideoClicksNode_Vast1
+class VideoClicksNode extends AbstractNode
 {
-    public function addClickTrackingNode(ClickTrackingNode $node): self
+    public function createClickThroughNode(): ClickThroughNode
     {
-        $this->addElement($node);
-        return $this;
+        return $this->addElement(new ClickThroughNode());
+    }
+
+    public function createClickTrackingNode(): ClickTrackingNode
+    {
+        return $this->addElement(new ClickTrackingNode());
     }
 }
