@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: tutyo
- * Date: 07.12.2018
- * Time: 22:14
- */
 
 namespace App\Vast\src\Nodes;
-
 
 use App\Vast\src\XmlConstructor\XmlConstructor;
 

@@ -10,16 +10,16 @@ class TestController extends Controller
     {
         $result = 0;
 
-        for($i=0;$i<1;$i++){
+        for($i=0;$i<10000;$i++){
             $start = microtime(true);
             $hob = $this->createVast1Node();
             $output = $hob->toXml();
             $result += (microtime(true) - $start);
         }
 
-        $vastDocument = $this->createVast1Node();
-
-        return $vastDocument->toXml();
+//        $vastDocument = $this->createVast1Node();
+//        return $vastDocument->toXml();
+        return $result;
     }
 
     public function createVast1Node()
