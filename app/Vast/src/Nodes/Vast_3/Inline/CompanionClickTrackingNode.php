@@ -3,9 +3,12 @@
 namespace App\Vast\src\Nodes\Vast_3\Inline;
 
 use App\Vast\src\Nodes\AbstractNode;
-use App\Vast\src\Traits\SetIdTrait;
 
 class CompanionClickTrackingNode extends AbstractNode
 {
-    use SetIdTrait;
+    public function setId(string $id): self
+    {
+        $this->setAttribute('id', $id);
+        return $this;
+    }
 }

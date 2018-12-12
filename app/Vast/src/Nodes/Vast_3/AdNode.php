@@ -11,4 +11,10 @@ class AdNode extends AdNode_Vast2
         $this->setAttribute('sequence', $value);
         return $this;
     }
+
+    public function addWrapperNode(WrapperNode $node): self
+    {
+        $this->addElement($node);
+        return $this;
+    }
 }

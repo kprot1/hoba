@@ -3,11 +3,14 @@
 namespace App\Vast\src\Nodes\Vast_1;
 
 use App\Vast\src\Nodes\AbstractNode;
-use App\Vast\src\Traits\SetIdTrait;
 
 class UrlNode extends AbstractNode
 {
-    use SetIdTrait;
+    public function setId(string $id): self
+    {
+        $this->setAttribute('id', $id);
+        return $this;
+    }
 
     public $cdata = true;
 

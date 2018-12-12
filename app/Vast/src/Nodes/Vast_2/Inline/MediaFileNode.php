@@ -3,17 +3,26 @@
 namespace App\Vast\src\Nodes\Vast_2\Inline;
 
 use App\Vast\src\Nodes\AbstractNode;
-use App\Vast\src\Traits\SetApiFrameworkTrait;
-use App\Vast\src\Traits\SetHeightTrait;
-use App\Vast\src\Traits\SetIdTrait;
-use App\Vast\src\Traits\SetWidthTrait;
 
 class MediaFileNode extends AbstractNode
 {
-    use SetIdTrait,
-        SetApiFrameworkTrait,
-        SetWidthTrait,
-        SetHeightTrait;
+    public function setWidth(string $width): self
+    {
+        $this->setAttribute('width', $width);
+        return $this;
+    }
+
+    public function setId(string $id): self
+    {
+        $this->setAttribute('id', $id);
+        return $this;
+    }
+
+    public function setHeight(string $value): self
+    {
+        $this->setAttribute('height', $value);
+        return $this;
+    }
 
     public function setBitrate(string $value): self
     {
@@ -42,6 +51,12 @@ class MediaFileNode extends AbstractNode
     public function setMaintainAspectRatio(string $value): self
     {
         $this->setAttribute('maintainAspectRatio', $value);
+        return $this;
+    }
+
+    public function setApiFramework(string $value): self
+    {
+        $this->setAttribute('apiFramework', $value);
         return $this;
     }
 }

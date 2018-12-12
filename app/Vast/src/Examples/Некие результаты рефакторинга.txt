@@ -7,3 +7,4 @@
 7) разобраться с cdata у UrlNode и CodeNode
 8) допилить библиотеку, чтобы работала (composer.json, .gitignore, phpunit)
 9) покрыть тестами трейты
+10) вынести xml в data
