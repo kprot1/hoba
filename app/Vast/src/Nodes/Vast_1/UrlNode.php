@@ -11,7 +11,4 @@ class UrlNode extends AbstractNode
         $this->setAttribute('id', $id);
         return $this;
     }
-
-    public $cdata = true;
-
 }

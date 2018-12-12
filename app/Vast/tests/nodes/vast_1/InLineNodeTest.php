@@ -6,52 +6,37 @@ use App\Vast\src\Nodes\Vast_1\AdSystemNode;
 use App\Vast\src\Nodes\Vast_1\AdTitleNode;
 use App\Vast\src\Nodes\Vast_1\CompanionAdsNode;
 use App\Vast\src\Nodes\Vast_1\ImpressionNode;
+use App\Vast\src\Nodes\Vast_1\InLineNode;
 use App\Vast\src\Nodes\Vast_1\NonLinearAdsNode;
 use App\Vast\src\Nodes\Vast_1\TrackingEventsNode;
 use App\Vast\src\Nodes\Vast_1\VideoNode;
 
 class InLineNodeTest extends AbstractTest
 {
-    private $node;
-
-    public function __construct(?string $name = null, array $data = [], string $dataName = '')
+    protected function initNode()
     {
-        parent::__construct($name, $data, $dataName);
-        $this->node = $this->createInlineNode();
+        return new InLineNode();
     }
 
-    public function testCreateTrackingEventsNode()
+    public function testExistMethods()
     {
-        $this->assertInstanceOf(TrackingEventsNode::class, $this->node->createTrackingEventsNode());
+        $this->assertTrue(method_exists($this->node, 'createAdSystemNode'));
+        $this->assertTrue(method_exists($this->node, 'createAdTitleNode'));
+        $this->assertTrue(method_exists($this->node, 'createImpressionNode'));
+        $this->assertTrue(method_exists($this->node, 'createTrackingEventsNode'));
+        $this->assertTrue(method_exists($this->node, 'createVideoNode'));
+        $this->assertTrue(method_exists($this->node, 'createCompanionAdsNode'));
+        $this->assertTrue(method_exists($this->node, 'createNonLinearAdsNode'));
     }
 
-    public function testCreateAdTitleNode()
-    {
-        $this->assertInstanceOf(AdTitleNode::class, $this->node->createAdTitleNode());
-    }
-
-    public function testCreateImpressionNode()
-    {
-        $this->assertInstanceOf(ImpressionNode::class, $this->node->createImpressionNode());
-    }
-
-    public function testCreateAdSystemNode()
+    public function testMethods()
     {
         $this->assertInstanceOf(AdSystemNode::class, $this->node->createAdSystemNode());
-    }
-
-    public function testCreateVideoNode()
-    {
+        $this->assertInstanceOf(AdTitleNode::class, $this->node->createAdTitleNode());
+        $this->assertInstanceOf(ImpressionNode::class, $this->node->createImpressionNode());
+        $this->assertInstanceOf(TrackingEventsNode::class, $this->node->createTrackingEventsNode());
         $this->assertInstanceOf(VideoNode::class, $this->node->createVideoNode());
-    }
-
-    public function testCreateCompanionAdsNode()
-    {
         $this->assertInstanceOf(CompanionAdsNode::class, $this->node->createCompanionAdsNode());
-    }
-
-    public function testCreateNonLinearAdsNode()
-    {
         $this->assertInstanceOf(NonLinearAdsNode::class, $this->node->createNonLinearAdsNode());
     }
 }
